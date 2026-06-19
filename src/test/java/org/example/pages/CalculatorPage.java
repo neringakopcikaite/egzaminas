@@ -16,22 +16,22 @@ public class CalculatorPage extends BasePage {
     }
 
     public void enterFirstNumber(String number) {
-        driver.findElement(FIRST_NUMBER_INPUT).clear();
-        driver.findElement(FIRST_NUMBER_INPUT).sendKeys(number);
+        getElement(FIRST_NUMBER_INPUT).clear();
+        getElement(FIRST_NUMBER_INPUT).sendKeys(number);
     }
 
     public void enterSecondNumber(String number) {
-        driver.findElement(SECOND_NUMBER_INPUT).clear();
-        driver.findElement(SECOND_NUMBER_INPUT).sendKeys(number);
+        getElement(SECOND_NUMBER_INPUT).clear();
+        getElement(SECOND_NUMBER_INPUT).sendKeys(number);
     }
 
     public void selectOperationByValue(String operation) {
-        Select select = new Select(driver.findElement(OPERATION_DROPDOWN));
+        Select select = new Select(getElement(OPERATION_DROPDOWN));
         select.selectByValue(operation);
     }
 
     public void clickCalculate() {
-        driver.findElement(CALCULATE_BUTTON).click();
+        getClickableElement(CALCULATE_BUTTON).click();
     }
 
     public void calculate(String firstNumber, String secondNumber, String operation) {

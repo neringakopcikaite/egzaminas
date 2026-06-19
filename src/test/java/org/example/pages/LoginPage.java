@@ -15,15 +15,17 @@ public class LoginPage extends BasePage {
     }
 
     public void enterUsername(String username) {
-        driver.findElement(USERNAME_INPUT).sendKeys(username);
+        getElement(USERNAME_INPUT).clear();
+        getElement(USERNAME_INPUT).sendKeys(username);
     }
 
     public void enterPassword(String password) {
-        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        getElement(PASSWORD_INPUT).clear();
+        getElement(PASSWORD_INPUT).sendKeys(password);
     }
 
     public void clickLogin() {
-        driver.findElement(LOGIN_BUTTON).click();
+        getClickableElement(LOGIN_BUTTON).click();
     }
 
     public void clickRegister() {
